@@ -5,6 +5,7 @@
 #include "./artsync/artolc.h"
 #include "./artsync/artunsync.h"
 #include "./desto/desto.h"
+#include "./destool/destool.h"
 #include "./xindex/xindex.h"
 #include "./btreeolc/btreeolc.h"
 #include "./hot/hot.h"
@@ -33,6 +34,9 @@ indexInterface<KEY_TYPE, PAYLOAD_TYPE> *get_index(std::string index_type) {
   }
   else if (index_type == "desto") {
     index = new DESTOInterface<KEY_TYPE, PAYLOAD_TYPE>;
+  }
+  else if (index_type == "destool") {
+    index = new DESTOOLInterface<KEY_TYPE, PAYLOAD_TYPE>;
   }
   // else if (index_type == "wormhole") {
   //   index = new WormholeInterface<KEY_TYPE, PAYLOAD_TYPE>;
